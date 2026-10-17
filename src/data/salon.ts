@@ -1,13 +1,17 @@
 export const SALON = {
   name: 'Hair Lounge Salon',
-  phone: '+918000000000',
-  phoneDisplay: '+91 80 0000 0000',
-  whatsapp: '918000000000',
+  tagline: 'The Art of Perfect Hair & Beauty',
+  phone: '+917975413713',
+  phoneDisplay: '+91 79754 13713',
+  secondaryPhone: '+919837088012',
+  secondaryPhoneDisplay: '+91 98370 88012',
+  landline: '080-35537493',
+  whatsapp: '917975413713',
   email: 'hello@hairloungesalon.in',
   address: {
     line1: 'Above New Udupi Grand, #5',
     line2: 'Opposite Acharya Institute of Technology',
-    line3: 'Thammenahalli Village, Thammenahalli',
+    line3: 'Thammenahalli Village',
     city: 'Bengaluru, Karnataka 560107',
   },
   hours: '9:00 AM – 9:00 PM',
@@ -16,7 +20,8 @@ export const SALON = {
     'https://www.google.com/maps/search/?api=1&query=Hair+Lounge+Salon+Acharya+Institute+of+Technology+Thammenahalli+Bengaluru',
   mapsEmbed:
     'https://www.google.com/maps?q=Acharya+Institute+of+Technology,+Thammenahalli,+Bengaluru,+Karnataka+560107&output=embed',
-  instagram: 'https://instagram.com',
+  instagram: 'https://www.instagram.com/hairloungesalon',
+  instagramHandle: '@hairloungesalon',
 };
 
 export const NAV_LINKS = [
@@ -34,6 +39,7 @@ export type ServiceItem = {
   desc?: string;
   popular?: boolean;
   duration?: string;
+  badge?: string;
 };
 
 export type ServiceCategory = {
@@ -49,69 +55,51 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     id: 'haircuts',
     label: 'Haircuts & Styling',
     icon: 'Scissors',
-    tagline: 'Precision cuts tailored to your face, lifestyle, and personality.',
+    tagline: 'Trendy & precision haircuts tailored to frame your face and boost volume.',
     items: [
-      { name: 'Classic Men\'s Haircut', price: '₹250', desc: 'Precision cut with wash & style', popular: true, duration: '30 min' },
-      { name: 'Women\'s Haircut & Blow-Dry', price: '₹500', desc: 'Cut, wash, and blow-dry styling', duration: '45 min' },
-      { name: 'Kids Haircut (under 12)', price: '₹180', desc: 'Gentle styling for little ones', duration: '20 min' },
-      { name: 'Premium Streaks & Layer Cut', price: '₹800', desc: 'Layered cut with textured finish', duration: '50 min' },
-      { name: 'Hair Wash & Blow-Dry', price: '₹200', desc: 'Refresh and style', duration: '20 min' },
-      { name: 'Ironing / Smoothening', price: '₹1,500', desc: 'Sleek, frizz-free finish', duration: '90 min' },
+      { name: 'Butterfly Haircut', price: '₹700', desc: 'Voluminous multi-layered cut with face framing', popular: true, duration: '45 min', badge: 'Trending' },
+      { name: 'Wolf Haircut', price: '₹650', desc: 'Edgy, textured modern shaggy layers', popular: true, duration: '45 min', badge: 'Popular' },
+      { name: 'Layer Cut with Face Framing', price: '₹600', desc: 'Maintains length while maximizing volume and movement', duration: '45 min' },
+      { name: 'Men\'s Burst Fade / Taper Fade', price: '₹300', desc: 'Clean, modern fade cut with razor detailing', popular: true, duration: '30 min' },
+      { name: 'Classic Men\'s Haircut', price: '₹250', desc: 'Precision cut with wash and quick styling', duration: '30 min' },
+      { name: 'Hair Wash & Blow-Dry', price: '₹250', desc: 'Deep refresh, smoothening, and bounce styling', duration: '25 min' },
+    ],
+  },
+  {
+    id: 'treatments',
+    label: 'Hair Treatments',
+    icon: 'Sparkles',
+    tagline: 'Deep cuticle repair and non-chemical frizz control.',
+    items: [
+      { name: 'Hair Botox Treatment', price: 'From ₹3,499', desc: 'Non-chemical repair for dry, damaged hair; controls frizz and provides 60%–80% smoothing shine', popular: true, duration: '120 min', badge: 'Signature' },
+      { name: 'Botox + Red Mahogany Tint', price: 'From ₹4,999', desc: 'Intense hydration coupled with rich custom tone enhancement', popular: true, duration: '150 min' },
+      { name: 'Keratin Smoothening', price: '₹3,500', desc: 'Silky smooth frizz-free hair finish', duration: '150 min' },
+      { name: 'Deep Moisture Hair Spa', price: '₹999', desc: 'Nourishing scalp and hair cuticle revival', duration: '45 min' },
     ],
   },
   {
     id: 'coloring',
     label: 'Hair Coloring',
     icon: 'Palette',
-    tagline: 'From subtle glosses to bold transformations — premium color, expertly applied.',
+    tagline: 'Signature balayage, pure blondes, and vibrant transformations.',
     items: [
-      { name: 'Global Hair Color', price: '₹1,200', desc: 'Full coverage single tone', popular: true, duration: '90 min' },
-      { name: 'Highlights (Streaks)', price: '₹2,500', desc: 'Partial highlights, premium brands', duration: '120 min' },
-      { name: 'Balayage / Ombre', price: '₹4,000', desc: 'Graduated color, hand-painted', popular: true, duration: '150 min' },
-      { name: 'Root Touch-Up', price: '₹600', desc: 'Cover regrowth seamlessly', duration: '45 min' },
-      { name: 'Fashion / Vivid Colors', price: '₹3,000', desc: 'Bold pinks, blues, greens', duration: '120 min' },
-      { name: 'Keratin Treatment', price: '₹3,500', desc: 'Smooth, strengthen & shine', duration: '180 min' },
+      { name: 'Any Hair Colour (Special Offer)', price: '₹4,000', desc: 'Limited promotional pricing for full hair colour makeovers', popular: true, duration: '120 min', badge: 'Offer ₹4K' },
+      { name: 'Blonde & Gold Reflect Ombré', price: '₹4,000', desc: 'Seamless root blend melting into pure warm blonde tones', popular: true, duration: '150 min' },
+      { name: 'Blonde Brown Highlights / Balayage', price: '₹4,000', desc: 'Custom dimensional placement matched to your skin tone', popular: true, duration: '150 min' },
+      { name: 'Red Mahogany / Chocolate Mocha', price: '₹4,000', desc: 'Lustrous, deep, bold warm hues', duration: '120 min' },
+      { name: 'Root Touch-Up', price: '₹800', desc: 'Seamless regrowth coverage', duration: '45 min' },
     ],
   },
   {
-    id: 'beard',
+    id: 'grooming',
     label: 'Beard & Grooming',
     icon: 'Wind',
-    tagline: 'Sharp lines, clean shaves, and relaxing grooming rituals.',
+    tagline: 'Crisp fades, straight-razor lines, and relaxing massage rituals.',
     items: [
-      { name: 'Beard Trim & Shape', price: '₹120', desc: 'Precision shaping with hot towel', popular: true, duration: '20 min' },
-      { name: 'Royal Shave', price: '₹200', desc: 'Traditional straight-razor shave', duration: '30 min' },
-      { name: 'Beard Coloring', price: '₹400', desc: 'Cover greys, match your style', duration: '25 min' },
-      { name: 'Hair & Beard Combo', price: '₹350', desc: 'Haircut + beard trim', popular: true, duration: '45 min' },
-      { name: 'Head Massage (30 min)', price: '₹250', desc: 'Relaxing oil head massage', duration: '30 min' },
-      { name: 'Full Grooming Package', price: '₹800', desc: 'Haircut, beard, shave & facial', duration: '90 min' },
-    ],
-  },
-  {
-    id: 'facial',
-    label: 'Facials & Skin Care',
-    icon: 'Sparkles',
-    tagline: 'Rejuvenate your skin with treatments designed for Indian skin tones.',
-    items: [
-      { name: 'Classic Cleanup Facial', price: '₹500', desc: 'Cleanse, exfoliate & moisturize', duration: '30 min' },
-      { name: 'Gold Glow Facial', price: '₹1,200', desc: '24K gold infusion for radiant skin', popular: true, duration: '60 min' },
-      { name: 'Anti-Tan Facial', price: '₹900', desc: 'De-tan and brighten', duration: '45 min' },
-      { name: 'Acne Control Facial', price: '₹1,000', desc: 'Targeted treatment for clear skin', duration: '50 min' },
-      { name: 'Threading (Eyebrows)', price: '₹50', desc: 'Precision brow shaping', duration: '10 min' },
-      { name: 'Waxing (Full Arms)', price: '₹250', desc: 'Smooth, long-lasting results', duration: '20 min' },
-    ],
-  },
-  {
-    id: 'bridal',
-    label: 'Bridal & Special Events',
-    icon: 'Crown',
-    tagline: 'Your biggest moments deserve our most luxurious artistry.',
-    items: [
-      { name: 'Bridal Hair & Makeup', price: '₹8,000', desc: 'Complete bridal transformation', popular: true, duration: '3 hrs' },
-      { name: 'Pre-Bridal Package (5 sessions)', price: '₹12,000', desc: 'Skin, hair & body prep sessions', duration: '5 sessions' },
-      { name: 'Engagement / Party Makeup', price: '₹3,500', desc: 'Glam look for special occasions', duration: '90 min' },
-      { name: 'Hairstyling for Events', price: '₹1,500', desc: 'Updos, curls & statement styles', duration: '60 min' },
-      { name: 'Group / Family Booking', price: 'On request', desc: 'Custom packages for groups', duration: 'Custom' },
+      { name: 'Beard Trim & Shape', price: '₹150', desc: 'Precision edge lining with hot towel finish', popular: true, duration: '20 min' },
+      { name: 'Haircut + Beard Styling Combo', price: '₹400', desc: 'Complete men\'s grooming session', popular: true, duration: '45 min' },
+      { name: 'Head Massage (30 min)', price: '₹300', desc: 'Stress-relieving herbal oil massage', duration: '30 min' },
+      { name: 'Beard Color & Grey Blending', price: '₹400', desc: 'Natural shade match and tint', duration: '25 min' },
     ],
   },
 ];
@@ -147,23 +135,23 @@ export type Highlight = {
 export const HIGHLIGHTS: Highlight[] = [
   {
     icon: 'Award',
-    title: 'Expert Stylists',
-    desc: 'Our team brings years of professional training and industry experience to every cut, color, and style.',
+    title: 'Signature Botox & Color',
+    desc: 'Specializing in non-chemical Hair Botox treatments and global transformations starting at ₹4,000.',
   },
   {
-    icon: 'FlaskConical',
-    title: 'Premium Products',
-    desc: 'We use only top-tier salon brands — gentle on your hair and skin, stunning in results.',
+    icon: 'Scissors',
+    title: 'Trending Haircuts',
+    desc: 'From Butterfly cuts to Burst fades, our artists create styles tailored to your face silhouette.',
+  },
+  {
+    icon: 'GraduationCap',
+    title: 'Steps from Acharya Campus',
+    desc: 'Located right opposite Acharya Institute of Technology in Thammenahalli for easy student access.',
   },
   {
     icon: 'ShieldCheck',
     title: 'Hygienic & Safe',
-    desc: 'Sanitized tools, fresh towels, and a spotless environment for every single client.',
-  },
-  {
-    icon: 'GraduationCap',
-    title: 'Student-Friendly',
-    desc: 'Right opposite Acharya Institute of Technology — walk in between classes or after hours.',
+    desc: 'Clean environment with sanitized instruments and fresh towels for every client.',
   },
 ];
 
@@ -177,32 +165,18 @@ export type TeamMember = {
 
 export const TEAM: TeamMember[] = [
   {
-    name: 'Arjun Reddy',
-    role: 'Master Stylist & Founder',
-    specialty: 'Precision cuts · Balayage',
+    name: 'Mohd',
+    role: 'Senior Hair Stylist & Color Specialist',
+    specialty: 'Balayage · Hair Botox · Layered Makeovers',
     image: 'https://images.pexels.com/photos/11169551/pexels-photo-11169551.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    experience: '12+ years',
+    experience: 'Expert Colorist (@hair_by_mohd)',
   },
   {
-    name: 'Priya Sharma',
-    role: 'Senior Colorist',
-    specialty: 'Vivid colors · Highlights',
-    image: 'https://images.pexels.com/photos/8468036/pexels-photo-8468036.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    experience: '8+ years',
-  },
-  {
-    name: 'Vikram Nair',
-    role: 'Barber & Grooming Expert',
-    specialty: 'Fades · Beard sculpting',
+    name: 'Faizy',
+    role: 'Master Stylist & Barber',
+    specialty: 'Butterfly Cuts · Burst Fades · Creative Styling',
     image: 'https://images.pexels.com/photos/19664892/pexels-photo-19664892.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    experience: '7+ years',
-  },
-  {
-    name: 'Ananya Iyer',
-    role: 'Bridal Makeup Artist',
-    specialty: 'Bridal glam · Special events',
-    image: 'https://images.pexels.com/photos/18063744/pexels-photo-18063744.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    experience: '10+ years',
+    experience: 'Trend Stylist (@faizyluce)',
   },
 ];
 
@@ -226,35 +200,35 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Sneha Gowda',
     role: 'IT Professional',
     rating: 5,
-    text: 'Got a balayage here and I\'m obsessed with the result. Priya understood exactly what I wanted from my Pinterest reference. The salon is gorgeous and super hygienic too.',
+    text: 'Got a balayage and Hair Botox here and I\'m obsessed with the result. Mohd understood exactly what I wanted from my reference. The salon is gorgeous and super hygienic too.',
     initials: 'SG',
   },
   {
     name: 'Karthik Raj',
     role: 'Local Resident',
     rating: 5,
-    text: 'Been coming here for over a year now. The beard shaping is on another level — precise, clean, and consistent every single time. The hot towel finish is a game changer.',
+    text: 'Been coming here for over a year now. The burst fade and beard shaping by Faizy are on another level — precise, clean, and consistent every single time. The hot towel finish is a game changer.',
     initials: 'KR',
   },
   {
     name: 'Divya Nair',
-    role: 'Bride, 2025',
+    role: 'Regular Client',
     rating: 5,
-    text: 'They did my bridal hair and makeup and I felt like a queen. Ananya listened to every detail and the trial session gave me total confidence. Every guest at my wedding complimented the look!',
+    text: 'Got a Butterfly haircut and global hair color @ ₹4,000 offer — my hair has never had this much volume and shine! Every friend complimented the transformation.',
     initials: 'DN',
   },
   {
     name: 'Aditya Kumar',
     role: 'Student, Acharya Institute',
     rating: 5,
-    text: 'The hair and beard combo for ₹350 is unbeatable value. The stylists actually care about how you want to look, not just a factory-line cut. This is my go-to spot now.',
+    text: 'The haircut and beard styling combo for ₹400 is unbeatable value. The stylists actually care about how you want to look, not just a factory-line cut. This is my go-to spot now.',
     initials: 'AK',
   },
   {
     name: 'Lakshmi Prasad',
     role: 'Regular Client',
     rating: 5,
-    text: 'The gold glow facial left my skin radiant for days. The ambience is so relaxing — you forget you\'re right next to a busy college. Easily the best salon in Thammenahalli.',
+    text: 'The Hair Botox treatment completely eliminated my frizz and left my hair silky smooth. Easily the best salon in Thammenahalli right opposite Acharya campus.',
     initials: 'LP',
   },
 ];

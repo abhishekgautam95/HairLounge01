@@ -79,13 +79,56 @@ export function Location() {
                 </div>
               </div>
 
+              <div className="glass-card rounded-2xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-600/10 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-gold-300" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-display text-lg font-semibold text-white mb-1">Booking & Contact Numbers</h3>
+                    <p className="text-xs font-light text-neutral-400 mb-3">
+                      Alternate line available if our primary number is engaged during salon hours:
+                    </p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center justify-between py-1.5 border-b border-white/5">
+                        <span className="text-neutral-400 font-light">Primary / WhatsApp</span>
+                        <a
+                          href={`tel:${SALON.phone}`}
+                          className="text-gold-300 font-medium hover:text-gold-200 transition-colors"
+                        >
+                          {SALON.phoneDisplay}
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between py-1.5 border-b border-white/5">
+                        <span className="text-neutral-400 font-light">Secondary Line</span>
+                        <a
+                          href={`tel:${SALON.secondaryPhone.replace(/\s+/g, '')}`}
+                          className="text-gold-300 font-medium hover:text-gold-200 transition-colors"
+                        >
+                          {SALON.secondaryPhoneDisplay}
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between py-1.5">
+                        <span className="text-neutral-400 font-light">Landline</span>
+                        <a
+                          href={`tel:${SALON.landline}`}
+                          className="text-gold-300 font-medium hover:text-gold-200 transition-colors"
+                        >
+                          {SALON.landline}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div className="grid grid-cols-3 gap-3">
                 <a
                   href={`tel:${SALON.phone}`}
                   className="glass-card rounded-2xl p-4 hover:border-gold-400/40 transition-all duration-300 group hover:-translate-y-1 text-center"
                 >
                   <Phone className="w-5 h-5 text-gold-300 mb-2 mx-auto group-hover:scale-110 transition-transform" />
-                  <p className="text-[11px] text-neutral-400 font-light">Call</p>
+                  <p className="text-[11px] text-neutral-400 font-light">Call Now</p>
                 </a>
                 <a
                   href={whatsappUrl}
@@ -103,7 +146,7 @@ export function Location() {
                   className="glass-card rounded-2xl p-4 hover:border-gold-400/40 transition-all duration-300 group hover:-translate-y-1 text-center"
                 >
                   <Instagram className="w-5 h-5 text-gold-300 mb-2 mx-auto group-hover:scale-110 transition-transform" />
-                  <p className="text-[11px] text-neutral-400 font-light">Instagram</p>
+                  <p className="text-[11px] text-neutral-400 font-light">{SALON.instagramHandle}</p>
                 </a>
               </div>
             </div>

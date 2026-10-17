@@ -81,9 +81,9 @@ export function Services({ onBookClick }: ServicesProps) {
               className="group relative h-full rounded-2xl glass-card p-6 hover:border-gold-400/40 transition-all duration-500 hover:shadow-xl hover:shadow-gold-500/10 hover:-translate-y-1"
               style={{ animationDelay: `${idx * 60}ms` }}
             >
-              {item.popular && (
+              {(item.badge || item.popular) && (
                 <div className="absolute -top-2.5 right-5 px-3 py-0.5 rounded-full bg-gradient-to-r from-rose-500 to-rose-600 text-white text-[10px] font-medium tracking-wide uppercase shadow-lg shadow-rose-500/20">
-                  Popular
+                  {item.badge || 'Popular'}
                 </div>
               )}
               <div className="flex items-start justify-between gap-3 mb-2">

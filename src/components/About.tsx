@@ -1,4 +1,4 @@
-import { Award, FlaskConical, ShieldCheck, GraduationCap, Clock, MapPin, type LucideIcon } from 'lucide-react';
+import { Award, FlaskConical, ShieldCheck, GraduationCap, Scissors, Clock, MapPin, type LucideIcon } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
 import { HIGHLIGHTS, SALON, ABOUT_IMAGE, TEAM, type TeamMember } from '@/data/salon';
 
@@ -7,13 +7,14 @@ const ICONS: Record<string, LucideIcon> = {
   FlaskConical,
   ShieldCheck,
   GraduationCap,
+  Scissors,
 };
 
 function TeamCard({ member, idx }: { member: TeamMember; idx: number }) {
   return (
     <Reveal delay={((idx % 4) + 1) as 1 | 2 | 3 | 4} variant="scale">
       <div className="group relative rounded-2xl overflow-hidden border border-gold-500/15 hover:border-gold-400/40 transition-all duration-500 hover:-translate-y-2">
-        <div className="relative h-72 overflow-hidden">
+        <div className="relative h-80 overflow-hidden">
           <img
             src={member.image}
             alt={member.name}
@@ -122,7 +123,7 @@ export function About() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto gap-6">
           {TEAM.map((member, idx) => (
             <TeamCard key={member.name} member={member} idx={idx} />
           ))}

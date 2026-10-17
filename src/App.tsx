@@ -17,11 +17,11 @@ import { CursorGlow } from '@/components/CursorGlow';
 import { SALON, STATS } from '@/data/salon';
 
 const MARQUEE_ITEMS = [
-  { icon: Scissors, text: 'Precision Haircuts' },
-  { icon: Palette, text: 'Expert Hair Coloring' },
-  { icon: Wind, text: 'Beard Grooming' },
-  { icon: Sparkles, text: 'Facial & Skincare' },
-  { icon: Crown, text: 'Bridal Packages' },
+  { icon: Scissors, text: 'Butterfly & Wolf Haircuts' },
+  { icon: Sparkles, text: 'Signature Hair Botox' },
+  { icon: Palette, text: 'Any Hair Colour @ ₹4,000' },
+  { icon: Wind, text: 'Burst Fades & Beard Grooming' },
+  { icon: Crown, text: 'Balayage & Ombré Makeovers' },
 ];
 
 function Marquee() {

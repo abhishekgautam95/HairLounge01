@@ -97,11 +97,19 @@ export function Footer({ onBookClick }: FooterProps) {
                   {SALON.address.line1}, {SALON.address.line2}, {SALON.address.line3}, {SALON.address.city}
                 </span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                <a href={`tel:${SALON.phone}`} className="hover:text-gold-300 transition-colors">
-                  {SALON.phoneDisplay}
-                </a>
+              <li className="flex items-start gap-2.5">
+                <Phone className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a href={`tel:${SALON.phone}`} className="hover:text-gold-300 transition-colors">
+                    {SALON.phoneDisplay}
+                  </a>
+                  <a href={`tel:${SALON.secondaryPhone.replace(/\s+/g, '')}`} className="hover:text-gold-300 transition-colors">
+                    {SALON.secondaryPhoneDisplay}
+                  </a>
+                  <a href={`tel:${SALON.landline}`} className="hover:text-gold-300 transition-colors text-xs text-neutral-500">
+                    Landline: {SALON.landline}
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-gold-400 flex-shrink-0" />

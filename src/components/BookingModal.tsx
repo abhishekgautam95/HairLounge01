@@ -38,6 +38,8 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
     cat.items.map((item) => `${item.name} (${cat.label})`)
   );
 
+  const whatsappNumber = SALON.whatsapp || '917975413713';
+
   const buildWhatsAppMessage = () => {
     const parts = [
       'Hi Hair Lounge Salon! I would like to book an appointment.',
@@ -46,7 +48,7 @@ export function BookingModal({ open, onClose }: BookingModalProps) {
       date && `Preferred Date: ${date}`,
       time && `Preferred Time: ${time}`,
     ].filter(Boolean);
-    return `https://wa.me/${SALON.whatsapp}?text=${encodeURIComponent(parts.join('\n'))}`;
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(parts.join('\n'))}`;
   };
 
   const handleWhatsAppBook = () => {
